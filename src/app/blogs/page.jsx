@@ -26,7 +26,7 @@ export default function About({ searchParams }) {
     end: searchParams.page ? Number(searchParams.page) * 3 : 3,
   }
   const { blogsArr, length } = getBlogs(searchParams)
-
+  console.log(searchParams)
   return (
     <>
       <HeroSection title='Blog' />

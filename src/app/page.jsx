@@ -10,14 +10,6 @@ import shopList from '../data/shopList'
 
 import styles from './page.module.scss'
 
-import bigSeater from '../../public/pictures/images/Rocket_single_seater_1.png'
-
-import firstSideTable from '../../public/pictures/images/Granite_square_side_table_1.png'
-
-import secondSideTable from '../../public/pictures/images/Cloud_sofa_three_seater_ottoman_3_1.png'
-
-import newArrival from '../../public/pictures/images/Asgaard_sofa_1.png'
-
 import clockSVG from '../../public/pictures/icons/clock.svg'
 
 import calenderSVG from '../../public/pictures/icons/calender.svg'
@@ -34,19 +26,34 @@ export default function Home() {
           <Link href='/shop'>Shop Now</Link>
         </div>
 
-        <Image src={bigSeater} alt='bigseater' />
+        <Image
+          src='/pictures/images/Rocket_single_seater_1.png'
+          alt='bigseater'
+          width={812}
+          height={732}
+        />
       </section>
       <section className={styles.categoriesShowcase}>
         <div className={styles.catItem}>
           <div>
-            <Image src={firstSideTable} alt='firts_sidetable' />
+            <Image
+              src='/pictures/images/Granite_square_side_table_1.png'
+              alt='firts_sidetable'
+              width={446}
+              height={393}
+            />
           </div>
           <h3>Side Table</h3>
           <Link href='/shop'>View More</Link>
         </div>
         <div className={styles.catItem}>
           <div>
-            <Image src={secondSideTable} alt='second_sidetable' />
+            <Image
+              src='/pictures/images/Cloud_sofa_three_seater_ottoman_3_1.png'
+              alt='second_sidetable'
+              width={412}
+              height={313}
+            />
           </div>
           <h3>Side Table</h3>
           <Link href='/shop'>View More</Link>
@@ -79,7 +86,12 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.newArrival_section}>
-        <Image src={newArrival} alt='newArrival' />
+        <Image
+          src='/pictures/images/Asgaard_sofa_1.png'
+          alt='newArrival'
+          width={881}
+          height={636}
+        />
         <div className={styles.newArrival__description}>
           <p>New Arrival</p>
           <h3>Asgaard sofa</h3>

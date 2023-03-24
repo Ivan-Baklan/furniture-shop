@@ -81,8 +81,8 @@ const blogs = [
     },
     imageSmall: {
       id: 1,
-      imageName: 'fouth_blog_small',
-      imagePath: '/pictures/images/blogs/fouth_blog_small.png',
+      imageName: 'fourth_blog_small',
+      imagePath: '/pictures/images/blogs/fourth_blog_small.png',
       width: 80,
       height: 80,
     },
