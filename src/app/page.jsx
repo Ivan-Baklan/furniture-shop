@@ -10,13 +10,13 @@ import shopList from '../data/shopList'
 
 import styles from './page.module.scss'
 
-import bigSeater from '../../public/pictures/images/Rocket single seater 1.png'
+import bigSeater from '../../public/pictures/images/Rocket_single_seater_1.png'
 
-import firstSideTable from '../../public/pictures/images/Granite square side table 1.png'
+import firstSideTable from '../../public/pictures/images/Granite_square_side_table_1.png'
 
-import secondSideTable from '../../public/pictures/images/Cloud sofa three seater + ottoman_3 1.png'
+import secondSideTable from '../../public/pictures/images/Cloud_sofa_three_seater_ottoman_3_1.png'
 
-import newArrival from '../../public/pictures/images/Asgaard sofa 1.png'
+import newArrival from '../../public/pictures/images/Asgaard_sofa_1.png'
 
 import clockSVG from '../../public/pictures/icons/clock.svg'
 
