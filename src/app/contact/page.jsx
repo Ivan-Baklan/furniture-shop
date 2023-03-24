@@ -2,9 +2,9 @@ import React from 'react'
 
 import Image from 'next/image'
 
-import addressSVG from '../../../public/pictures/icons/contactPage/address.svg'
+import addressSVG from '../../../public/pictures/icons/contactPage/Address.svg'
 
-import phoneSVG from '../../../public/pictures/icons/contactPage/phone.svg'
+import phoneSVG from '../../../public/pictures/icons/contactPage/Phone.svg'
 
 import timeSVG from '../../../public/pictures/icons/contactPage/WorkingTime.svg'
 

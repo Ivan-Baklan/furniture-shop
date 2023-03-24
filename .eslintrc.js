@@ -17,6 +17,5 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'no-unused-expressions': 'off',
     'react/jsx-curly-brace-presence': 'off',
-    'import/no-unresolved': 'off',
   },
 }
