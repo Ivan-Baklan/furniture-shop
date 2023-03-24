@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "next dev -p 8080 ",
+    "deploy": "json-server --watch data/mockServer/test.json && next dev -p 8080 ",
     "server": "json-server --watch data/mockServer/test.json",
     "dev": "next dev -p 8080",
     "build": "next build",
