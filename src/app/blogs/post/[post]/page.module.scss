@@ -1,0 +1,44 @@
+.post_content {
+  width: 80%;
+  margin: 30px auto 0 auto;
+  .blogs_post {
+    text-align: center;
+    margin-bottom: 20px;
+    .post_image {
+      width: 817px;
+      height: 500px;
+      border-radius: 10px;
+    }
+    .post_info {
+      margin-top: 17px;
+      span {
+        font-weight: 400;
+        color: #9f9f9f;
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+        img {
+          position: relative;
+          top: 3px;
+
+          margin-right: 10px;
+        }
+      }
+    }
+    .post_article {
+      font-weight: 500;
+      font-size: 1.875rem;
+      margin: 15px 0 12px 0;
+    }
+    .post_descr {
+      font-weight: 400;
+      text-align: justify;
+      font-size: 0, 9375rem;
+      line-height: 150%;
+      color: #9f9f9f;
+      margin: 0 0 30px 0;
+    }
+  }
+}

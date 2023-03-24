@@ -1,0 +1,71 @@
+.footer {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 98px;
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .address {
+      width: 20%;
+      text-align: start;
+      align-self: center;
+      color: #9f9f9f;
+    }
+    .footer_navigation {
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      align-self: flex-start;
+      list-style: none;
+      li {
+        text-align: start;
+        margin-bottom: 55px;
+      }
+      li + li {
+        margin: 44px 0;
+      }
+      p {
+        color: #9f9f9f;
+      }
+      li a {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+    .subscribeForm {
+      margin: 0;
+      text-align: start;
+      p {
+        color: #9f9f9f;
+        margin-bottom: 55px;
+      }
+
+      input[type='email'] {
+        font-size: 0.875rem;
+        padding: 3px 3px 3px 0;
+        margin-right: 3px;
+        border: none;
+        border-bottom: 1px solid #000000;
+        outline: none;
+      }
+
+      input[value='Subscribe'] {
+        font-size: 0.875rem;
+        padding: 0 0 3px 0;
+        border: none;
+        border-bottom: 1px solid #000000;
+        background-color: white;
+      }
+    }
+  }
+
+  .horizontalLine {
+    border: 1px solid #d9d9d9;
+  }
+  .rights {
+    text-align: start;
+    margin: 35px 0 38px 0;
+  }
+}

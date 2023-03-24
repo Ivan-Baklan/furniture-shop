@@ -1,0 +1,25 @@
+.progress_section {
+  background: #faf4f4;
+  .section_wrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+
+    justify-content: space-between;
+    text-align: start;
+    .progress_item {
+      width: 25%;
+      margin: 96px 0;
+      h4 {
+        font-weight: 500;
+        margin-top: 0;
+        font-size: 2rem;
+      }
+      p {
+        font-weight: 400;
+        font-size: 1.25rem;
+        color: #9f9f9f;
+      }
+    }
+  }
+}

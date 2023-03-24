@@ -1,0 +1,40 @@
+.recentPosts_container {
+  width: 80%;
+  margin: 0 auto;
+  h4 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+  }
+  .recentPostsList {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+
+    .post_item {
+      display: flex;
+      gap: 12px;
+
+      img {
+        border-radius: 10px;
+      }
+      .item_heading {
+        a {
+          text-decoration: none;
+          color: #000000;
+          h6 {
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin: 8px 0 5px 0;
+          }
+        }
+        p {
+          font-weight: 400;
+          font-size: 0.75rem;
+          margin: 0;
+          color: #9f9f9f;
+        }
+      }
+    }
+  }
+}

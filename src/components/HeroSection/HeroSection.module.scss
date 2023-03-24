@@ -1,0 +1,29 @@
+.heroSection {
+  text-align: center;
+  display: flex;
+  height: 316px;
+  background-image: url('/pictures/images/shopListImages/heroBg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &_wrapper {
+    margin: auto;
+    h3 {
+      font-weight: 500;
+      font-size: 3rem;
+      margin: 0;
+    }
+    p {
+      font-weight: 500;
+      display: inline-block;
+
+      &::after {
+        content: url('/pictures/icons/Vector.svg');
+        margin: 0 9px 0 9px;
+        vertical-align: middle;
+      }
+    }
+    span {
+      font-weight: 300;
+    }
+  }
+}

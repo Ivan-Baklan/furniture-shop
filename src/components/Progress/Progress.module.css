@@ -1,0 +1,24 @@
+.progress_section {
+  background: #faf4f4;
+}
+.progress_section .section_wrapper {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: start;
+}
+.progress_section .section_wrapper .progress_item {
+  width: 25%;
+  margin: 96px 0;
+}
+.progress_section .section_wrapper .progress_item h4 {
+  font-weight: 500;
+  margin-top: 0;
+  font-size: 2rem;
+}
+.progress_section .section_wrapper .progress_item p {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #9f9f9f;
+}/*# sourceMappingURL=Progress.module.css.map */
