@@ -4,6 +4,10 @@ import Image from 'next/image'
 
 import Link from 'next/link'
 
+import blogs from '../data/blogs'
+
+import shopList from '../data/shopList'
+
 import styles from './page.module.scss'
 
 import bigSeater from '../../public/pictures/images/Rocket single seater 1.png'
@@ -18,10 +22,9 @@ import clockSVG from '../../public/pictures/icons/clock.svg'
 
 import calenderSVG from '../../public/pictures/icons/calender.svg'
 
-export default async function Home() {
-  const productsData = getTopProducts()
-  const postsData = getPosts()
-  const [products, posts] = await Promise.all([productsData, postsData])
+export default function Home() {
+  const products = getTopProducts()
+  const posts = getPosts()
 
   return (
     <main>
@@ -132,23 +135,13 @@ export default async function Home() {
   )
 }
 
-async function getTopProducts() {
-  const res = await fetch(
-    'http://localhost:3000/shopList?_sort=rating&_order=desc&_limit=4',
-    {
-      next: {
-        revalidate: 600,
-      },
-    },
-  )
+function getTopProducts() {
+  const res = shopList
 
-  return res.json()
+  return res.slice(0, 4)
 }
 
-async function getPosts() {
-  const postRes = await fetch(
-    'http://localhost:3000/blogs?_limit=3&_order=desc',
-    { next: { revalidate: 600 } },
-  )
-  return postRes.json()
+function getPosts() {
+  const postRes = blogs
+  return postRes.slice(0, 3)
 }

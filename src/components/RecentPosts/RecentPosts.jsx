@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './RecentPosts.module.scss'
+import blogs from '../../data/blogs'
 
 export default async function RecentPosts() {
   const recentPosts = await getRecentPosts()
@@ -21,7 +22,7 @@ export default async function RecentPosts() {
               height={_elem.imageSmall.height}
             />
             <div className={styles.item_heading}>
-              <Link href={`/blogs/${_elem.article}`}>
+              <Link href={`/blogs/post/${_elem.article}`}>
                 <h6>{_elem.article}</h6>
               </Link>
               <p>{_elem.dateTime}</p>
@@ -34,10 +35,7 @@ export default async function RecentPosts() {
 }
 
 async function getRecentPosts() {
-  const res = await fetch(`http://localhost:3000/blogs`, {
-    next: { revalidate: 300 },
-  })
-  const data = await res.json()
+  const data = blogs
 
   return data.reverse().slice(0, 4)
 }

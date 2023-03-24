@@ -5,9 +5,10 @@ import styles from './page.module.scss'
 import userSVG from '../../../../../public/pictures/icons/blogPage/user.svg'
 import labelSVG from '../../../../../public/pictures/icons/blogPage/label.svg'
 import calendarSVG from '../../../../../public/pictures/icons/blogPage/calendar.svg'
+import blogs from '../../../../data/blogs'
 
-export default async function Post({ params }) {
-  const post = await getPost(params.post)
+export default function Post({ params }) {
+  const post = getPost(params.post)
 
   return (
     <main className={styles.post_content}>
@@ -40,11 +41,10 @@ export default async function Post({ params }) {
   )
 }
 
-export async function getPost(article) {
-  const res = await fetch(`http://localhost:3000/blogs?article=${article}`, {
-    next: { revalidate: 600 },
-  })
-
-  const data = await res.json()
+function getPost(article) {
+  const data = blogs.filter((elem) =>
+    elem.article.includes(article.slice(0, 3)),
+  )
+  console.log(data)
   return data[0]
 }

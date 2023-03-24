@@ -39,7 +39,7 @@ export default function PostItem({ post }) {
       <h4 className={styles.post_article}>{post.article}</h4>
       <p className={styles.post_descr}>{post.description}</p>
       <div className={styles.post_readMore}>
-        <Link href={`/blogs/${post.article}`}>Read More</Link>
+        <Link href={`/blogs/post/${post.article}`}>Read More</Link>
         <hr />
       </div>
     </div>

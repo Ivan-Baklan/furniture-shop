@@ -1,12 +1,13 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { NextButton, StyledPaginationBar } from './PaginationBar.styled'
 import Button from '../Button/Button'
 
 export default function PaginationBar({ postsAmount, pageSize }) {
   const searchParams = useSearchParams()
+  const pathname = usePathname()
   const router = useRouter()
   const [activeButton, setActiveButton] = useState({
     buttonNumber: 1,
@@ -17,15 +18,15 @@ export default function PaginationBar({ postsAmount, pageSize }) {
   const paginationHandler = (e) => {
     const currentPage = searchParams.get('page') ? searchParams.get('page') : 1
     if (e.target.value === 'next' && currentPage < pageAmount) {
-      router.replace(`/blogs?page=${Number(currentPage) + 1}`)
+      router.replace(`${pathname}?page=${Number(currentPage) + 1}`)
       const newActiveButton = {
         ...activeButton,
         buttonNumber: Number(currentPage) + 1,
       }
-      console.log(newActiveButton)
+
       setActiveButton(newActiveButton)
     } else if (e.target.value !== 'next') {
-      router.replace(`/blogs?page=${e.target.value}`)
+      router.replace(`${pathname}?page=${e.target.value}`)
       const newActiveButton = { ...activeButton, buttonNumber: e.target.value }
       setActiveButton(newActiveButton)
     }

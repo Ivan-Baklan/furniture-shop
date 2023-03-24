@@ -1,0 +1,188 @@
+const blogs = [
+  {
+    id: 1,
+    editor: 'admin',
+    dateTime: '14 Oct 2023',
+    images_big: {
+      id: 1,
+      imageName: 'first_blog_big',
+      imagePath: '/pictures/images/blogs/first_blog_big.png',
+      width: 817,
+      height: 500,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'first_blog_small',
+      imagePath: '/pictures/images/blogs/first_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Wood',
+    article: 'Going all-in with millennial design',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 2,
+    editor: 'admin',
+    dateTime: '14 Oct 2023',
+    images_big: {
+      id: 1,
+      imageName: 'second_blog_big',
+      imagePath: '/pictures/images/blogs/second_blog_big.png',
+      width: 817,
+      height: 500,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'second_blog_small',
+      imagePath: '/pictures/images/blogs/second_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Handmade',
+    article: 'Exploring new ways of decorating',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 3,
+    editor: 'admin',
+    dateTime: '14 Oct 2023',
+    images_big: {
+      id: 1,
+      imageName: 'third_blog_big',
+      imagePath: '/pictures/images/blogs/third_blog_big.png',
+      width: 817,
+      height: 500,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'third_blog_small',
+      imagePath: '/pictures/images/blogs/third_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Wood',
+    article: 'Handmade pieces that took time to make',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 4,
+    editor: 'admin',
+    dateTime: '3 Aug 2023',
+    images_big: {
+      id: 1,
+      imageName: 'fouth_blog_big',
+      imagePath: '/pictures/images/blogs/fouth_blog_big.jpg',
+      width: 1280,
+      height: 853,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'fouth_blog_small',
+      imagePath: '/pictures/images/blogs/fouth_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Design',
+    article: 'Modern home in Milan',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 5,
+    editor: 'admin',
+    dateTime: '3 Aug 2023',
+    images_big: {
+      id: 1,
+      imageName: 'fifth_blog_big',
+      imagePath: '/pictures/images/blogs/fifth_blog_big.jpg',
+      width: 1280,
+      height: 848,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'fifth_blog_small',
+      imagePath: '/pictures/images/blogs/fifth_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Design',
+    article: 'Colorful office redesign',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 6,
+    editor: 'admin',
+    dateTime: '3 Aug 2023',
+    images_big: {
+      id: 1,
+      imageName: 'seventh_blog_big',
+      imagePath: '/pictures/images/blogs/seventh_blog_big.jpg',
+      width: 1920,
+      height: 1380,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'seventh_blog_small',
+      imagePath: '/pictures/images/blogs/seventh_blog_small.jpg',
+      width: 80,
+      height: 80,
+    },
+    category: 'Design',
+    article: 'The interior design of your dreams',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 7,
+    editor: 'admin',
+    dateTime: '3 Aug 2023',
+    images_big: {
+      id: 1,
+      imageName: 'fouth_blog_big',
+      imagePath: '/pictures/images/blogs/fouth_blog_big.jpg',
+      width: 1280,
+      height: 853,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'fouth_blog_small',
+      imagePath: '/pictures/images/blogs/fourth_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Design',
+    article: 'Modern home in Milan',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+  {
+    id: 8,
+    editor: 'admin',
+    dateTime: '14 Oct 2023',
+    images_big: {
+      id: 1,
+      imageName: 'sixth_blog_big',
+      imagePath: '/pictures/images/blogs/sixth_blog_big.jpg',
+      width: 817,
+      height: 500,
+    },
+    imageSmall: {
+      id: 1,
+      imageName: 'third_blog_small',
+      imagePath: '/pictures/images/blogs/third_blog_small.png',
+      width: 80,
+      height: 80,
+    },
+    category: 'Design',
+    article: 'Exploring new ways of decorating',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.',
+  },
+]
+
+export default blogs
