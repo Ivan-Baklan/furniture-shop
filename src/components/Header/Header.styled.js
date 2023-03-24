@@ -9,4 +9,4 @@ const StyledHeader = styled.header`
   background-color: ${(props) => (props.bgColor ? '#FBEBB5' : '#fffff')};
 `
 
-export { StyledHeader }
+export default StyledHeader

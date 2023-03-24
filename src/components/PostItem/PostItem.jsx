@@ -1,12 +1,17 @@
 import React from 'react'
 
 import Image from 'next/image'
+
 import Link from 'next/link'
 
 import userSVG from '../../../public/pictures/icons/blogPage/user.svg'
+
 import labelSVG from '../../../public/pictures/icons/blogPage/label.svg'
+
 import calendarSVG from '../../../public/pictures/icons/blogPage/calendar.svg'
+
 import styles from './PostItem.module.scss'
+
 export default function PostItem({ post }) {
   return (
     <div className={styles.blogs_post}>

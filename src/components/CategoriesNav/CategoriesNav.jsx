@@ -11,17 +11,15 @@ export default async function CategoriesNav() {
       <div className={styles.content}>
         {Object.keys(categories)
           .sort()
-          .map((_elem) => {
-            return (
-              <div key={_elem} className={styles.item_container}>
-                <Link href={`/blogs/${_elem}/1`}>
-                  <p className={styles.item}>{_elem}</p>
+          .map((elem) => (
+            <div key={elem} className={styles.item_container}>
+              <Link href={`/blogs/${elem}/1`}>
+                <p className={styles.item}>{elem}</p>
 
-                  <p className={styles.item}>{categories[_elem]}</p>
-                </Link>
-              </div>
-            )
-          })}
+                <p className={styles.item}>{categories[elem]}</p>
+              </Link>
+            </div>
+          ))}
       </div>
     </div>
   )
@@ -35,7 +33,7 @@ async function getCategories() {
   const categories = [...data].map((elem) => elem.category)
   const catObj = {}
   categories.forEach((elem) => {
-    Object.hasOwn(catObj, elem) ? catObj[elem]++ : (catObj[elem] = 1)
+    Object.hasOwn(catObj, elem) ? catObj[elem] + 1 : (catObj[elem] = 1)
   })
   return catObj
 }

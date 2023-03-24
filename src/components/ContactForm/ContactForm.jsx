@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import { StyledContactForm } from './ContactForm.styled'
+
+import StyledContactForm from './ContactForm.styled'
 
 export default function ContactForm() {
   return (
@@ -13,7 +14,7 @@ export default function ContactForm() {
       <label htmlFor='subject'>Subject</label>
       <input type='text' id='subject' placeholder='This is an optional' />
       <label htmlFor='message'>Message</label>
-      <textarea placeholder="Hi! I'd like to ask about" rows='4'></textarea>
+      <textarea placeholder="Hi! I'd like to ask about" rows='4' />
       <input type='submit' value='Submit' />
     </StyledContactForm>
   )

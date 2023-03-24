@@ -1,25 +1,32 @@
 import React from 'react'
 
 import Image from 'next/image'
+
 import addressSVG from '../../../public/pictures/icons/contactPage/address.svg'
+
 import phoneSVG from '../../../public/pictures/icons/contactPage/phone.svg'
+
 import timeSVG from '../../../public/pictures/icons/contactPage/WorkingTime.svg'
-import ContactForm from '@/components/ContactForm/ContactForm'
-import HeroSection from '@/components/HeroSection/HeroSection'
-import Progress from '@/components/Progress/Progress'
+
+import ContactForm from '../../components/ContactForm/ContactForm'
+
+import HeroSection from '../../components/HeroSection/HeroSection'
+
+import Progress from '../../components/Progress/Progress'
+
 import styles from './page.module.scss'
 
 export default function Contact() {
   return (
     <>
-      <HeroSection title={'Contact'} />
+      <HeroSection title='Contact' />
       <section className={styles.contactUs_section}>
         <div className={styles.heading}>
           <h3>Get In Touch With Us</h3>
           <p>
-            For More Information About Our Product {'&'} Services. Please Feel
-            Free To Drop Us An Email. Our Staff Always Be There To Help You Out.
-            Do Not Hesitate!
+            For More Information About Our Product & Services. Please Feel Free
+            To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
+            Not Hesitate!
           </p>
         </div>
         <div className={styles.content}>

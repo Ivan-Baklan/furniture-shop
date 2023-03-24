@@ -1,15 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
-import HeroSection from '@/components/HeroSection/HeroSection'
+import HeroSection from '../../../../components/HeroSection/HeroSection'
 import styles from './page.module.scss'
 
 import magnifierSVG from '../../../../../public/pictures/icons/blogPage/magnifier.svg'
 
-import PostItem from '@/components/PostItem/PostItem'
-import PaginationBar from '@/components/PaginationBar/PaginationBar'
-import CategoriesNav from '@/components/CategoriesNav/CategoriesNav'
-import Progress from '@/components/Progress/Progress'
-import RecentPosts from '@/components/RecentPosts/RecentPosts'
+import PostItem from '../../../../components/PostItem/PostItem'
+import PaginationBar from '../../../../components/PaginationBar/PaginationBar'
+import CategoriesNav from '../../../../components/CategoriesNav/CategoriesNav'
+import Progress from '../../../../components/Progress/Progress'
+import RecentPosts from '../../../../components/RecentPosts/RecentPosts'
 
 export default async function BlogsByCategoryPage({ params }) {
   const pageSize = {
@@ -20,19 +20,19 @@ export default async function BlogsByCategoryPage({ params }) {
 
   return (
     <>
-      <HeroSection title={'Blog'} />
+      <HeroSection title='Blog' />
       <main className={styles.mainBlog_container}>
         <section className={styles.blogs_container}>
           {[...postsByCategory]
             .slice(pageSize.start, pageSize.end)
-            .map((_elem) => {
-              return <PostItem key={_elem.id} post={_elem} />
-            })}
+            .map((_elem) => (
+              <PostItem key={_elem.id} post={_elem} />
+            ))}
         </section>
         <nav className={styles.blogs_searchBar}>
           <form className={styles.searchBar}>
             <input type='text' />
-            <button>
+            <button type='button'>
               <Image src={magnifierSVG} alt='magnifier_button' />
             </button>
           </form>

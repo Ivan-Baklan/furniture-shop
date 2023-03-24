@@ -44,4 +44,4 @@ const StyledContactForm = styled.form`
   }
 `
 
-export { StyledContactForm }
+export default StyledContactForm

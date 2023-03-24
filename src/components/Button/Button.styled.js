@@ -9,4 +9,4 @@ const PageButton = styled.button`
   border: none;
 `
 
-export { PageButton }
+export default PageButton

@@ -2,7 +2,8 @@
 
 import React from 'react'
 
-import { PageButton } from './Button.styled'
+import PageButton from './Button.styled'
+
 export default function Button({
   value,
   activeButton,
