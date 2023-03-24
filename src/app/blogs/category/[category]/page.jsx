@@ -18,7 +18,7 @@ export default function BlogsByCategoryPage({ params, searchParams }) {
     end: Number(searchParams.page) * 3,
   }
   const postsByCategory = getCategory(params.category)
-  console.log(postsByCategory)
+
   return (
     <>
       <HeroSection title='Blog' />

@@ -45,6 +45,6 @@ function getPost(article) {
   const data = blogs.filter((elem) =>
     elem.article.includes(article.slice(0, 3)),
   )
-  console.log(data)
+
   return data[0]
 }

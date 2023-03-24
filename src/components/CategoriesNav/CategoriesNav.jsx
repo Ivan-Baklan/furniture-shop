@@ -32,11 +32,9 @@ function getCategories() {
   const data = [...blogs]
   const categories = [...data].map((elem) => elem.category)
   const catObj = {}
-  categories.forEach((elem) =>
-    Object.hasOwn(catObj, elem)
-      ? (catObj[elem] = catObj[elem] + 1)
-      : (catObj[elem] = 1),
-  )
+  categories.forEach((elem) => {
+    Object.hasOwn(catObj, elem) ? (catObj[elem] += 1) : (catObj[elem] = 1)
+  })
 
   return catObj
 }
