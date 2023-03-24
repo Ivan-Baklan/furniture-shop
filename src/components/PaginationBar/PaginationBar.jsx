@@ -10,7 +10,9 @@ export default function PaginationBar({ postsAmount, pageSize }) {
   const pathname = usePathname()
   const router = useRouter()
   const [activeButton, setActiveButton] = useState({
-    buttonNumber: 1,
+    buttonNumber: searchParams.get('page')
+      ? Number(searchParams.get('page'))
+      : 1,
   })
 
   const pageAmount = Math.ceil(postsAmount / pageSize)
@@ -18,7 +20,7 @@ export default function PaginationBar({ postsAmount, pageSize }) {
   const paginationHandler = (e) => {
     const currentPage = searchParams.get('page') ? searchParams.get('page') : 1
     if (e.target.value === 'next' && currentPage < pageAmount) {
-      router.replace(`${pathname}?page=${Number(currentPage) + 1}`)
+      router.push(`${pathname}?page=${Number(currentPage) + 1}`)
       const newActiveButton = {
         ...activeButton,
         buttonNumber: Number(currentPage) + 1,
@@ -26,7 +28,7 @@ export default function PaginationBar({ postsAmount, pageSize }) {
 
       setActiveButton(newActiveButton)
     } else if (e.target.value !== 'next') {
-      router.replace(`${pathname}?page=${e.target.value}`)
+      router.push(`${pathname}?page=${e.target.value}`)
       const newActiveButton = { ...activeButton, buttonNumber: e.target.value }
       setActiveButton(newActiveButton)
     }

@@ -114,7 +114,7 @@ export default function Home() {
                 />
                 <h4>{_elem.article}</h4>
                 <div className={styles.viewMore}>
-                  <Link href={'/shop'}>View More</Link>
+                  <Link href='/blogs?page=1'>View More</Link>
                   <hr />
                 </div>
                 <div className={styles.post_info}>
@@ -131,7 +131,7 @@ export default function Home() {
             ))}
           </div>
           <div className={styles.viewMore_anchor}>
-            <Link href='/blogs'>View All Posts</Link>
+            <Link href='/blogs?page=1'>View All Posts</Link>
             <hr />
           </div>
         </div>
