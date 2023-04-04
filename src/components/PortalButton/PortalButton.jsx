@@ -40,11 +40,7 @@ export default function PortalButton() {
 
       {isModalOpen && (
         <CartPortal>
-          <div
-            className={styles.module_overlay}
-            onClick={() => setModalOpen(false)}
-            role='presentation'
-          >
+          <div className={styles.module_overlay} role='presentation'>
             <div className={styles.module_container}>
               <div className={styles.main_content}>
                 <div className={styles.heading_content}>

@@ -33,11 +33,9 @@ export const cartSlice = createSlice({
       state.cartList = newList
     },
     deleteItem: (state, action) => {
-      const filtered = state.cartList.filter(
-        (elem) => elem.id === action.payload,
+      state.cartList = state.cartList.filter(
+        (elem) => elem.id !== action.payload,
       )
-
-      state.cartList = filtered
     },
   },
 })
