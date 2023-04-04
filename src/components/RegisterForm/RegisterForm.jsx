@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+
 import {
   ParagraphInfo,
   ParagraphPolicy,
@@ -11,10 +12,8 @@ export default function RegisterForm() {
   return (
     <StyledRegisterForm>
       <h3>Register</h3>
-      <label htmlFor='email'>Email address</label>
-      <input type='text' name='email' />
-
-      {/* <EmailWarning>{isRegSuccess.email}</EmailWarning> */}
+      <label htmlFor='email-input'>Email address</label>
+      <input type='text' id='email-input' name='email' />
 
       <ParagraphInfo>
         A link to set a new password will be sent to your email address.

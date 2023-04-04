@@ -42,6 +42,14 @@ const StyledContactForm = styled.form`
     border: 1px solid #000000;
     border-radius: 15px;
   }
+
+  @media screen and (max-width: 1000px) {
+    width: auto;
+    justify-self: stretch;
+    input[type='submit'] {
+      align-self: center;
+    }
+  }
 `
 
 export default StyledContactForm

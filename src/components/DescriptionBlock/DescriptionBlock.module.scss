@@ -1,0 +1,47 @@
+.descriptionBlock {
+  .navPanel {
+    display: flex;
+    place-content: center;
+    gap: 53px;
+    button {
+      background-color: white;
+      border: none;
+      font-weight: 400;
+      font-size: 2rem;
+      color: #9f9f9f;
+    }
+    .active {
+      color: #000000;
+    }
+  }
+  p {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #9f9f9f;
+    text-align: justify;
+    margin-top: 37px;
+    margin-bottom: 30px;
+  }
+  .desc_images {
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    img {
+      background: #fff9e6;
+      border-radius: 10px;
+      height: 348px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .descriptionBlock {
+    .navPanel {
+      gap: 20px;
+      button {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

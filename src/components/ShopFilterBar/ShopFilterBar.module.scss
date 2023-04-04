@@ -1,0 +1,107 @@
+.filterBar_container {
+  background-color: #faf4f4;
+  margin-top: 47px;
+  padding: 23px 0;
+  .filterBar_wrapper {
+    margin: 0 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .leftside_viewPanel {
+      justify-self: start;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      button {
+        padding: 6px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+
+        &:hover {
+          box-shadow: 0 0 15px #4e4e4e48;
+        }
+        &:active {
+          background-color: #eae4e4;
+          box-shadow: 0 0 19px #4e4e4e48;
+        }
+      }
+      .filterButton {
+        font-weight: 400;
+        font-size: 1.25rem;
+        img {
+          position: relative;
+          top: 3px;
+          margin-right: 15px;
+        }
+      }
+      .verticalLine {
+        align-self: stretch;
+        border-left: 2px solid #9f9f9f;
+      }
+    }
+    .rightside_filterPanel {
+      justify-self: end;
+      align-self: center;
+      .sorting_form {
+        display: flex;
+        gap: 29px;
+        label {
+          font-weight: 400;
+          font-size: 1.25rem;
+
+          .sizeInput {
+            width: 60px;
+          }
+          input {
+            font-weight: 400;
+            font-size: 1.25rem;
+            border: none;
+            margin-left: 17px;
+            padding: 12px 18px;
+            &:focus {
+              outline: 1px solid #a5a5a5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .filterBar_container {
+    .filterBar_wrapper {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+      .leftside_viewPanel {
+        flex-wrap: wrap;
+      }
+      .rightside_filterPanel {
+        .sorting_form {
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .filterBar_container {
+    .filterBar_wrapper {
+      .leftside_viewPanel {
+        justify-self: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .rightside_filterPanel {
+        justify-self: center;
+        .sorting_form {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

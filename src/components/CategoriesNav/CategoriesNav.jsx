@@ -1,13 +1,24 @@
-import React from 'react'
-
 import Link from 'next/link'
+import React from 'react'
 
 import styles from './CategoriesNav.module.scss'
 
-import blogs from '../../data/blogs'
+async function getCategories() {
+  const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
+    next: { revalidate: 300 },
+  })
+  const data = await res.json()
+  const categories = [...data].map((elem) => elem.category)
+  const catObj = {}
+  categories.forEach((elem) =>
+    Object.hasOwn(catObj, elem) ? (catObj[elem] += 1) : (catObj[elem] = 1),
+  )
 
-export default function CategoriesNav() {
-  const categories = getCategories()
+  return catObj
+}
+
+export default async function CategoriesNav() {
+  const categories = await getCategories()
   return (
     <div className={styles.category_table}>
       <h3 className={styles.heading}>Categories</h3>
@@ -26,15 +37,4 @@ export default function CategoriesNav() {
       </div>
     </div>
   )
-}
-
-function getCategories() {
-  const data = [...blogs]
-  const categories = [...data].map((elem) => elem.category)
-  const catObj = {}
-  categories.forEach((elem) => {
-    Object.hasOwn(catObj, elem) ? (catObj[elem] += 1) : (catObj[elem] = 1)
-  })
-
-  return catObj
 }

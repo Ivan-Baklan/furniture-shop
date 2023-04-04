@@ -22,6 +22,7 @@
     }
   }
   img {
+    width: 800px;
     object-fit: contain;
   }
 }
@@ -90,9 +91,13 @@
         width: 287px;
         height: 287px;
       }
-      h4 {
-        font-weight: 400;
-        font-size: 1rem;
+      a {
+        text-decoration: none;
+        color: #000000;
+        h4 {
+          font-weight: 400;
+          font-size: 1rem;
+        }
       }
       p {
         font-weight: 500;
@@ -127,6 +132,9 @@
 
   flex-grow: 1;
   align-items: center;
+  img {
+    object-fit: contain;
+  }
   .newArrival__description {
     flex-grow: 1;
     text-align: center;
@@ -174,8 +182,7 @@
       .post_item {
         .post_picture {
           object-fit: cover;
-          width: 393px;
-          height: 393px;
+
           border-radius: 10px;
         }
         h4 {
@@ -264,6 +271,126 @@
 
     &:hover {
       box-shadow: 0 14px 14px rgb(173, 173, 173);
+    }
+  }
+}
+
+@media screen and (max-width: 1401px) {
+  .singleSeater_heading {
+    width: inherit;
+    padding-left: 30px;
+  }
+  .topPicks_list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .singleSeater {
+    flex-direction: column;
+    text-align: center;
+  }
+  .categoriesShowcase {
+    flex-wrap: wrap;
+  }
+  .newArrival_section {
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      order: 2;
+    }
+    .newArrival__description {
+      order: 1;
+      margin: 20px 0 20px 0;
+    }
+  }
+  .blogs_list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .singleSeater {
+    img {
+      width: 600px;
+    }
+  }
+  .newArrival_section {
+    img {
+      width: 600px;
+    }
+  }
+  .topPicks_container {
+    p {
+      text-align: center;
+    }
+    .topPicks_item {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .categoriesShowcase {
+    .catItem {
+      div {
+        width: fit-content;
+        height: fit-content;
+        img {
+          width: 300px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  .singleSeater {
+    padding-top: 100px;
+    h2 {
+      font-size: 2.25rem;
+    }
+    a {
+      font-size: 1rem;
+    }
+    img {
+      width: 400px;
+    }
+  }
+  .newArrival_section {
+    img {
+      width: 400px;
+      height: 500px;
+    }
+  }
+  .ourInstagram_section {
+    .ourInstagram_wrapper {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .singleSeater {
+    img {
+      width: 300px;
+      height: 400px;
+    }
+  }
+  .newArrival_section {
+    img {
+      width: 300px;
+      height: 400px;
+    }
+  }
+  .blogs_list {
+    .post_item {
+      .post_picture {
+        width: 300px;
+        height: 300px;
+      }
     }
   }
 }

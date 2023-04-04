@@ -1,38 +1,42 @@
 import React from 'react'
-
 import Image from 'next/image'
-
 import HeroSection from '../../components/HeroSection/HeroSection'
-
 import styles from './page.module.scss'
 
 import magnifierSVG from '../../../public/pictures/icons/blogPage/magnifier.svg'
 
 import PostItem from '../../components/PostItem/PostItem'
-
 import PaginationBar from '../../components/PaginationBar/PaginationBar'
-
 import CategoriesNav from '../../components/CategoriesNav/CategoriesNav'
-
 import Progress from '../../components/Progress/Progress'
-
 import RecentPosts from '../../components/RecentPosts/RecentPosts'
 
-import blogs from '../../data/blogs'
+async function getBlogs() {
+  const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
+    next: { revalidate: 300 },
+  })
+  const data = await res.json()
 
-export default function About({ searchParams }) {
-  const pageRange = {
-    start: searchParams.page ? (Number(searchParams.page) - 1) * 3 : 0,
-    end: searchParams.page ? Number(searchParams.page) * 3 : 3,
+  return {
+    blogs: data,
+    length: data.length,
   }
-  const { blogsArr, length } = getBlogs(searchParams)
-  console.log(searchParams)
+}
+
+export default async function About({ searchParams }) {
+  const pageSize = 3
+  const pageRange = {
+    start: searchParams.page ? (Number(searchParams.page) - 1) * pageSize : 0,
+    end: searchParams.page ? Number(searchParams.page) * pageSize : pageSize,
+  }
+  const { blogs, length } = await getBlogs(searchParams)
+
   return (
     <>
       <HeroSection title='Blog' />
       <main className={styles.mainBlog_container}>
         <section className={styles.blogs_container}>
-          {[...blogsArr].slice(pageRange.start, pageRange.end).map((_elem) => (
+          {[...blogs].slice(pageRange.start, pageRange.end).map((_elem) => (
             <PostItem key={_elem.id} post={_elem} />
           ))}
         </section>
@@ -46,18 +50,9 @@ export default function About({ searchParams }) {
           <CategoriesNav />
           <RecentPosts />
         </nav>
-        <PaginationBar postsAmount={length} pageSize={3} />
+        <PaginationBar postsAmount={length} pageSize={pageSize} />
       </main>
       <Progress />
     </>
   )
-}
-
-function getBlogs() {
-  const data = blogs
-
-  return {
-    blogsArr: blogs,
-    length: data.length,
-  }
 }

@@ -5,6 +5,9 @@ const StyledPaginationBar = styled.div`
   justify-self: center;
   display: flex;
   gap: 38px;
+  @media screen and (max-width: 460px) {
+    gap: 15px;
+  }
 `
 
 const NextButton = styled.button`

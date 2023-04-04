@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Link from 'next/link'
+
 import styles from './Footer.module.scss'
 
 export default function Footer() {
@@ -23,7 +25,7 @@ export default function Footer() {
             <Link href='/shop'>Shop</Link>
           </li>
           <li>
-            <Link href='/about'>Blogs</Link>
+            <Link href='/blogs'>Blogs</Link>
           </li>
           <li>
             <Link href='/contact'>Contact</Link>

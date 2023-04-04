@@ -38,3 +38,9 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .recentPosts_container {
+    display: none;
+  }
+}

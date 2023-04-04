@@ -4,9 +4,9 @@
     width: 85%;
     margin: 0 auto;
     display: flex;
-
+    align-items: flex-start;
     justify-content: space-between;
-    text-align: start;
+
     .progress_item {
       width: 25%;
       margin: 96px 0;
@@ -19,6 +19,21 @@
         font-weight: 400;
         font-size: 1.25rem;
         color: #9f9f9f;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .progress_section {
+    .section_wrapper {
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+      .progress_item {
+        width: 250px;
       }
     }
   }

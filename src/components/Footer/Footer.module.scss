@@ -6,7 +6,7 @@
   &_wrapper {
     display: flex;
     justify-content: space-between;
-
+    gap: 30px;
     .address {
       width: 20%;
       text-align: start;
@@ -67,5 +67,32 @@
   .rights {
     text-align: start;
     margin: 35px 0 38px 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer_wrapper {
+    flex-wrap: wrap;
+    .address {
+      width: fit-content;
+    }
+    .footer_navigation {
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer_wrapper {
+    align-items: center;
+    justify-content: center;
+    .address {
+      text-align: center;
+    }
+    .footer_navigation {
+      li {
+        text-align: center;
+      }
+    }
   }
 }

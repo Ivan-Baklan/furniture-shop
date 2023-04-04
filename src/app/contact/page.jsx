@@ -2,9 +2,9 @@ import React from 'react'
 
 import Image from 'next/image'
 
-import addressSVG from '../../../public/pictures/icons/contactPage/Address.svg'
+import addressSVG from '../../../public/pictures/icons/contactPage/address.svg'
 
-import phoneSVG from '../../../public/pictures/icons/contactPage/Phone.svg'
+import phoneSVG from '../../../public/pictures/icons/contactPage/phone.svg'
 
 import timeSVG from '../../../public/pictures/icons/contactPage/WorkingTime.svg'
 
@@ -33,7 +33,7 @@ export default function Contact() {
           <div className={styles.companyInfo}>
             <h4>
               <span>
-                <Image src={addressSVG} />
+                <Image src={addressSVG} alt='address_svg' />
               </span>
               Address
             </h4>
@@ -42,7 +42,7 @@ export default function Contact() {
           <div className={styles.companyInfo}>
             <h4>
               <span>
-                <Image src={phoneSVG} />
+                <Image src={phoneSVG} alt='phone_svg' />
               </span>
               Phone
             </h4>
@@ -53,7 +53,7 @@ export default function Contact() {
           <div className={styles.companyInfo}>
             <h4>
               <span>
-                <Image src={timeSVG} />
+                <Image src={timeSVG} alt='time_svg' />
               </span>
               Working Time
             </h4>

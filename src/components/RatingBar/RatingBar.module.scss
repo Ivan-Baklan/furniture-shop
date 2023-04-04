@@ -1,0 +1,16 @@
+.rating_container {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+
+  .rating_wrapper {
+    img {
+      position: relative;
+      top: 3px;
+      margin-right: 8px;
+    }
+    small {
+      color: #9f9f9f;
+    }
+  }
+}

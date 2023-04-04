@@ -1,0 +1,108 @@
+.hamburgerMenu_container {
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding-left: 20px;
+  justify-self: start;
+  background-color: #ffffff00;
+  .menuButton {
+    position: absolute;
+
+    top: 5%;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+
+    &:focus {
+      outline: none;
+    }
+    .active {
+      &:first-child {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+    div {
+      width: 2rem;
+      height: 0.25rem;
+      background: #000000;
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      position: relative;
+      transform-origin: 1px;
+
+      &:first-child {
+        transform: rotate(0);
+      }
+
+      &:nth-child(2) {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(0);
+      }
+    }
+  }
+  .shown {
+    transform: translateX(-20px);
+  }
+  .hidden {
+    transform: translateX(-320px);
+  }
+  .hamburgerMenu_navBar {
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 300px;
+    background-color: white;
+    padding: 100px 0 100px 20px;
+    transition: transform 1s ease-in-out;
+    .page_nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 10px;
+        a {
+          font-weight: 500;
+          font-size: 1rem;
+          text-decoration: none;
+          color: #000000;
+        }
+      }
+    }
+    .user_nav {
+      margin: 30px 0 40px 0;
+      list-style: none;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hamburgerMenu_container {
+    display: block;
+  }
+}

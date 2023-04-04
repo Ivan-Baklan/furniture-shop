@@ -1,8 +1,10 @@
 .blogs_post {
+  width: 100%;
+
   margin-bottom: 20px;
   .post_image {
-    width: 817px;
-    height: 500px;
+    width: inherit;
+    height: auto;
     border-radius: 10px;
   }
   .post_info {
@@ -31,7 +33,7 @@
   .post_descr {
     font-weight: 400;
     text-align: justify;
-    font-size: 0, 9375rem;
+    font-size: 0.9375rem;
     line-height: 150%;
     color: #9f9f9f;
     margin: 0 0 30px 0;
@@ -46,6 +48,20 @@
     hr {
       width: 85%;
       border-top: 1px solid #000000;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .blogs_post {
+    .post_info {
+      span {
+        font-size: 0.875rem;
+        margin-left: 15px;
+        img {
+          margin-right: 5px;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,40 @@
+.productItem {
+  max-width: 300px;
+  a {
+    text-align: start;
+    text-decoration: none;
+    color: black;
+    .image_container {
+      width: 286px;
+      height: 286px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        object-fit: contain;
+      }
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 1.5rem;
+      text-align: start;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .productItem {
+    a {
+      text-align: center;
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

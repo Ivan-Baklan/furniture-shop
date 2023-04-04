@@ -1,0 +1,38 @@
+.user_button {
+  width: 24px;
+  height: 20px;
+  border: none;
+  background-image: url(/pictures/icons/alert.svg);
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+.module_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+
+  .module_container {
+    width: 417px;
+    height: 400px;
+    background-color: white;
+    padding: 28px 0;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    .sign_out {
+      font-weight: 400;
+      font-size: 1.25rem;
+      padding: 17px 102px;
+      background-color: #ffffff00;
+      border: 1px solid #000000;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+  }
+}

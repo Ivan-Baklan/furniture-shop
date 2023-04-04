@@ -4,9 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import searchSVG from '../../../public/pictures/icons/search.svg'
 import heartSVG from '../../../public/pictures/icons/heart.svg'
-import cartSVG from '../../../public/pictures/icons/cart.svg'
-import profileSVG from '../../../public/pictures/icons/alert.svg'
+
 import styles from './Navigation.module.scss'
+import PortalButton from '../PortalButton/PortalButton'
+import UserButton from '../UserButton/UserButton'
 
 export default function Navigation() {
   return (
@@ -22,7 +23,7 @@ export default function Navigation() {
       </nav>
       <ul className={styles.user_menu}>
         <li>
-          <Image src={profileSVG} alt='profile_icon' />
+          <UserButton />
         </li>
         <li>
           <Image src={searchSVG} alt='search_icon' />
@@ -31,7 +32,7 @@ export default function Navigation() {
           <Image src={heartSVG} alt='heart_icon' />
         </li>
         <li>
-          <Image src={cartSVG} alt='cart_icon' />
+          <PortalButton />
         </li>
       </ul>
     </>

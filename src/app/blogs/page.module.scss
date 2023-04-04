@@ -26,3 +26,12 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .mainBlog_container {
+    grid-template-columns: 1fr;
+  }
+  .searchBar {
+    display: none;
+  }
+}

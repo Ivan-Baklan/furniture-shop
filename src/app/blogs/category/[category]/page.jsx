@@ -1,23 +1,39 @@
 import React from 'react'
+
 import Image from 'next/image'
+
 import HeroSection from '../../../../components/HeroSection/HeroSection'
+
 import styles from './page.module.scss'
 
 import magnifierSVG from '../../../../../public/pictures/icons/blogPage/magnifier.svg'
 
 import PostItem from '../../../../components/PostItem/PostItem'
-import PaginationBar from '../../../../components/PaginationBar/PaginationBar'
-import CategoriesNav from '../../../../components/CategoriesNav/CategoriesNav'
-import Progress from '../../../../components/Progress/Progress'
-import RecentPosts from '../../../../components/RecentPosts/RecentPosts'
-import blogs from '../../../../data/blogs'
 
-export default function BlogsByCategoryPage({ params, searchParams }) {
+import PaginationBar from '../../../../components/PaginationBar/PaginationBar'
+
+import CategoriesNav from '../../../../components/CategoriesNav/CategoriesNav'
+
+import Progress from '../../../../components/Progress/Progress'
+
+import RecentPosts from '../../../../components/RecentPosts/RecentPosts'
+
+async function getCategory(category) {
+  const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
+    next: { revalidate: 300 },
+  })
+  const data = await res.json()
+  return data.filter(
+    (elem) => elem.category.toLowerCase() === category.toLowerCase(),
+  )
+}
+
+export default async function BlogsByCategoryPage({ params, searchParams }) {
   const pageSize = {
     start: (Number(searchParams.page) - 1) * 3,
     end: Number(searchParams.page) * 3,
   }
-  const postsByCategory = getCategory(params.category)
+  const postsByCategory = await getCategory(params.category)
 
   return (
     <>
@@ -45,13 +61,4 @@ export default function BlogsByCategoryPage({ params, searchParams }) {
       <Progress />
     </>
   )
-}
-
-function getCategory(category) {
-  const data = blogs
-  const filteredData = [...data].filter(
-    (_elem) => _elem.category.toLowerCase() === category.toLowerCase(),
-  )
-
-  return filteredData
 }

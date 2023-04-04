@@ -45,3 +45,16 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .contactUs_section {
+    grid-template-columns: 1fr;
+    .heading {
+      grid-column: auto;
+      width: auto;
+    }
+    .content {
+      width: auto;
+    }
+  }
+}

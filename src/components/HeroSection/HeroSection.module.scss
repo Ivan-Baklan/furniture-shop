@@ -27,3 +27,17 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .heroSection {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .heroSection {
+    h3 {
+      font-size: 1.75rem;
+    }
+  }
+}

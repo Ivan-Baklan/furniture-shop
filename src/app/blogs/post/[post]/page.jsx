@@ -1,14 +1,28 @@
 import React from 'react'
+
 import Image from 'next/image'
 
 import styles from './page.module.scss'
-import userSVG from '../../../../../public/pictures/icons/blogPage/user.svg'
-import labelSVG from '../../../../../public/pictures/icons/blogPage/label.svg'
-import calendarSVG from '../../../../../public/pictures/icons/blogPage/calendar.svg'
-import blogs from '../../../../data/blogs'
 
-export default function Post({ params }) {
-  const post = getPost(params.post)
+import userSVG from '../../../../../public/pictures/icons/blogPage/user.svg'
+
+import labelSVG from '../../../../../public/pictures/icons/blogPage/label.svg'
+
+import calendarSVG from '../../../../../public/pictures/icons/blogPage/calendar.svg'
+
+async function getPost(article) {
+  const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
+    next: { revalidate: 600 },
+  })
+
+  const data = await res.json()
+  const post = article.split('%20').join(' ')
+
+  return data.find((elem) => elem.article.includes(post))
+}
+
+export default async function Post({ params }) {
+  const post = await getPost(params.post)
 
   return (
     <main className={styles.post_content}>
@@ -39,12 +53,4 @@ export default function Post({ params }) {
       </div>
     </main>
   )
-}
-
-function getPost(article) {
-  const data = blogs.filter((elem) =>
-    elem.article.includes(article.slice(0, 3)),
-  )
-
-  return data[0]
 }

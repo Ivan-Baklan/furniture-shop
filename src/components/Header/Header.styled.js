@@ -7,6 +7,9 @@ const StyledHeader = styled.header`
   justify-items: center;
   align-items: center;
   background-color: ${(props) => (props.bgColor ? '#FBEBB5' : '#fffff')};
+
+  @media screen and (max-width: 1000px) {
+  }
 `
 
 export default StyledHeader

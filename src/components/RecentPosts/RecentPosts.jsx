@@ -5,7 +5,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './RecentPosts.module.scss'
-import blogs from '../../data/blogs'
+
+async function getRecentPosts() {
+  const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
+    next: { revalidate: 300 },
+  })
+  const data = await res.json()
+
+  return data.reverse().slice(0, 4)
+}
 
 export default async function RecentPosts() {
   const recentPosts = await getRecentPosts()
@@ -32,10 +40,4 @@ export default async function RecentPosts() {
       </div>
     </div>
   )
-}
-
-async function getRecentPosts() {
-  const data = blogs
-
-  return data.reverse().slice(0, 4)
 }

@@ -5,3 +5,9 @@
   margin-top: 63px;
   margin-bottom: 67px;
 }
+@media screen and (max-width: 1000px) {
+  .registrationForm {
+    flex-direction: column;
+    align-items: center;
+  }
+}

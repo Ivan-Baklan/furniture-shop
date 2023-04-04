@@ -4,19 +4,44 @@ import Image from 'next/image'
 
 import Link from 'next/link'
 
-import blogs from '../data/blogs'
-
-import shopList from '../data/shopList'
-
 import styles from './page.module.scss'
+
+import bigSeater from '../../public/pictures/images/Rocket single seater 1.png'
+
+import firstSideTable from '../../public/pictures/images/Granite square side table 1.png'
+
+import secondSideTable from '../../public/pictures/images/Cloud sofa three seater + ottoman_3 1.png'
+
+import newArrival from '../../public/pictures/images/Asgaard sofa 1.png'
 
 import clockSVG from '../../public/pictures/icons/clock.svg'
 
 import calenderSVG from '../../public/pictures/icons/calender.svg'
 
-export default function Home() {
-  const products = getTopProducts()
-  const posts = getPosts()
+async function getProducts() {
+  const res = await fetch(`${process.env.MOCK_SERVER}/shopList`, {
+    next: { revalidate: 300 },
+  })
+  const data = await res.json()
+
+  const topProducts = data
+    .filter((elem) => elem.rating > 3)
+    .sort()
+    .slice(0, 4)
+  return topProducts
+}
+
+async function getPosts() {
+  const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
+    next: { revalidate: 300 },
+  })
+  const data = await res.json()
+  return data
+}
+
+export default async function Home() {
+  const products = await getProducts()
+  const posts = await getPosts()
 
   return (
     <main>
@@ -26,40 +51,25 @@ export default function Home() {
           <Link href='/shop'>Shop Now</Link>
         </div>
 
-        <Image
-          src='/pictures/images/Rocket_single_seater_1.png'
-          alt='bigseater'
-          width={812}
-          height={732}
-        />
+        <Image src={bigSeater} alt='bigseater' />
       </section>
       <section className={styles.categoriesShowcase}>
         <div className={styles.catItem}>
           <div>
-            <Image
-              src='/pictures/images/Granite_square_side_table_1.png'
-              alt='firts_sidetable'
-              width={446}
-              height={393}
-            />
+            <Image src={firstSideTable} alt='firts_sidetable' />
           </div>
           <h3>Side Table</h3>
           <Link href='/shop'>View More</Link>
         </div>
         <div className={styles.catItem}>
           <div>
-            <Image
-              src='/pictures/images/Cloud_sofa_three_seater_ottoman_3_1.png'
-              alt='second_sidetable'
-              width={412}
-              height={313}
-            />
+            <Image src={secondSideTable} alt='second_sidetable' />
           </div>
           <h3>Side Table</h3>
           <Link href='/shop'>View More</Link>
         </div>
       </section>
-      {/* Here should be top 4 high rated furniture */}
+
       <section className={styles.topPicks_container}>
         <h3>Top Picks For You</h3>
         <p>
@@ -74,8 +84,11 @@ export default function Home() {
                 src={_elem.mainImage.imagePath}
                 width={_elem.mainImage.width}
                 height={_elem.mainImage.height}
+                alt={_elem.mainImage.imageName}
               />
-              <h4>{_elem.title}</h4>
+              <Link href={`/shop/product/${_elem.productInfo.sku}`}>
+                <h4>{_elem.title}</h4>
+              </Link>
               <p>{_elem.currency.concat(' ', _elem.value)}</p>
             </div>
           ))}
@@ -86,12 +99,7 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.newArrival_section}>
-        <Image
-          src='/pictures/images/Asgaard_sofa_1.png'
-          alt='newArrival'
-          width={881}
-          height={636}
-        />
+        <Image src={newArrival} alt='newArrival' />
         <div className={styles.newArrival__description}>
           <p>New Arrival</p>
           <h3>Asgaard sofa</h3>
@@ -103,27 +111,26 @@ export default function Home() {
           <h3>Our blogs</h3>
           <p>Find a bright ideal to suit your taste with our great selection</p>
           <div className={styles.blogs_list}>
-            {posts.map((_elem) => (
+            {posts.slice(0, 3).map((_elem) => (
               <div key={_elem.id} className={styles.post_item}>
                 <Image
                   className={styles.post_picture}
                   src={_elem.images_big.imagePath}
                   alt={_elem.images_big.imageName}
-                  width={_elem.images_big.width}
-                  height={_elem.images_big.height}
+                  width={393}
+                  height={393}
                 />
                 <h4>{_elem.article}</h4>
                 <div className={styles.viewMore}>
-                  <Link href='/blogs?page=1'>View More</Link>
+                  <Link href='/shop'>View More</Link>
                   <hr />
                 </div>
                 <div className={styles.post_info}>
                   <p className={styles.info}>
-                    <Image src={clockSVG} />
-                    {'5 min'}
+                    <Image src={clockSVG} alt='clock_svg' />5 min
                   </p>
                   <p className={styles.info}>
-                    <Image src={calenderSVG} />
+                    <Image src={calenderSVG} alt='calendar_svg' />
                     {_elem.dateTime}
                   </p>
                 </div>
@@ -131,7 +138,7 @@ export default function Home() {
             ))}
           </div>
           <div className={styles.viewMore_anchor}>
-            <Link href='/blogs?page=1'>View All Posts</Link>
+            <Link href='/blogs'>View All Posts</Link>
             <hr />
           </div>
         </div>
@@ -145,15 +152,4 @@ export default function Home() {
       </section>
     </main>
   )
-}
-
-function getTopProducts() {
-  const res = shopList
-
-  return res.slice(0, 4)
-}
-
-function getPosts() {
-  const postRes = blogs
-  return postRes.slice(0, 3)
 }

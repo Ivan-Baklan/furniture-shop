@@ -1,0 +1,38 @@
+.leftside_showcase {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  .tumbnail_panel {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    .tumbnail {
+      width: 80;
+      height: 80;
+      button {
+        position: relative;
+
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        border: none;
+        background-color: #fff9e6;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        .tumbnail_image {
+          position: absolute;
+
+          transform: translate(-74px, 2px);
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .main_image {
+    width: 100%;
+    height: initial;
+    background: #fff9e6;
+    border-radius: 10px;
+  }
+}
