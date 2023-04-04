@@ -11,7 +11,7 @@ import Button from '../Button/Button'
 export default function PaginationBar({ postsAmount, pageSize, page, path }) {
   const router = useRouter()
   const [activeButton, setActiveButton] = useState({
-    buttonNumber: page ? page : 1,
+    buttonNumber: page !== undefined ? page : 1,
   })
 
   const pageAmount = Math.ceil(postsAmount / pageSize)
