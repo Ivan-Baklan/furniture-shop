@@ -1,0 +1,36 @@
+.mainBlog_container {
+  width: 90%;
+  margin: 106px auto 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  .blogs_container {
+    justify-self: center;
+    width: 80%;
+  }
+  .blogs_searchBar {
+    width: 70%;
+    justify-self: center;
+    .searchBar {
+      input {
+        width: 100%;
+        padding: 18px 20px;
+        border: 1px solid #9f9f9f;
+        border-radius: 10px;
+      }
+      button {
+        position: absolute;
+        transform: translate(-39px, 15px);
+        border: none;
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .mainBlog_container {
+    grid-template-columns: 1fr;
+  }
+  .searchBar {
+    display: none;
+  }
+}

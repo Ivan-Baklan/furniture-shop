@@ -1,15 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
-import HeroSection from '../../components/HeroSection/HeroSection'
+import HeroSection from '../../../components/HeroSection/HeroSection'
 import styles from './page.module.scss'
 
-import magnifierSVG from '../../../public/pictures/icons/blogPage/magnifier.svg'
+import magnifierSVG from '../../../../public/pictures/icons/blogPage/magnifier.svg'
 
-import PostItem from '../../components/PostItem/PostItem'
-import PaginationBar from '../../components/PaginationBar/PaginationBar'
-import CategoriesNav from '../../components/CategoriesNav/CategoriesNav'
-import Progress from '../../components/Progress/Progress'
-import RecentPosts from '../../components/RecentPosts/RecentPosts'
+import PostItem from '../../../components/PostItem/PostItem'
+import PaginationBar from '../../../components/PaginationBar/PaginationBar'
+import CategoriesNav from '../../../components/CategoriesNav/CategoriesNav'
+import Progress from '../../../components/Progress/Progress'
+import RecentPosts from '../../../components/RecentPosts/RecentPosts'
 
 async function getBlogs() {
   const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {

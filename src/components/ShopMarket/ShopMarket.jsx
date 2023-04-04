@@ -35,7 +35,12 @@ export default async function ShopMarket({ searchParams }) {
           />
         ))}
       </section>
-      <PaginationBar postsAmount={shopList.length} pageSize={pageSize} />
+      <PaginationBar
+        postsAmount={shopList.length}
+        pageSize={pageSize}
+        page={searchParams.page}
+        path='shop/page'
+      />
     </main>
   )
 }

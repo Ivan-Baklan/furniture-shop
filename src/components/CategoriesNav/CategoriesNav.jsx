@@ -27,7 +27,7 @@ export default async function CategoriesNav() {
           .sort()
           .map((elem) => (
             <div key={elem} className={styles.item_container}>
-              <Link href={`/blogs/category/${elem}?page=1`}>
+              <Link href={`/blogs/category/${elem}`}>
                 <p className={styles.item}>{elem}</p>
 
                 <p className={styles.item}>{categories[elem]}</p>

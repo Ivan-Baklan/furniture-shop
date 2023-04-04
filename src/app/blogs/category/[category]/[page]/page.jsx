@@ -2,21 +2,21 @@ import React from 'react'
 
 import Image from 'next/image'
 
-import HeroSection from '../../../../components/HeroSection/HeroSection'
+import HeroSection from '../../../../../components/HeroSection/HeroSection'
 
 import styles from './page.module.scss'
 
-import magnifierSVG from '../../../../../public/pictures/icons/blogPage/magnifier.svg'
+import magnifierSVG from '../../../../../../public/pictures/icons/blogPage/magnifier.svg'
 
-import PostItem from '../../../../components/PostItem/PostItem'
+import PostItem from '../../../../../components/PostItem/PostItem'
 
-import PaginationBar from '../../../../components/PaginationBar/PaginationBar'
+import PaginationBar from '../../../../../components/PaginationBar/PaginationBar'
 
-import CategoriesNav from '../../../../components/CategoriesNav/CategoriesNav'
+import CategoriesNav from '../../../../../components/CategoriesNav/CategoriesNav'
 
-import Progress from '../../../../components/Progress/Progress'
+import Progress from '../../../../../components/Progress/Progress'
 
-import RecentPosts from '../../../../components/RecentPosts/RecentPosts'
+import RecentPosts from '../../../../../components/RecentPosts/RecentPosts'
 
 async function getCategory(category) {
   const res = await fetch(`${process.env.MOCK_SERVER}/blogs`, {
@@ -59,8 +59,8 @@ export default async function BlogsByCategoryPage({ params }) {
         <PaginationBar
           postsAmount={postsByCategory.length}
           pageSize={3}
-          path={`blogs/category/${params.category}`}
           page={params.page}
+          path={`blogs/category/${params.category}`}
         />
       </main>
       <Progress />
