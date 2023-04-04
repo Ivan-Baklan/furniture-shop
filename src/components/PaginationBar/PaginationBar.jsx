@@ -18,11 +18,11 @@ export default function PaginationBar({ postsAmount, pageSize, page, path }) {
   const buttonArr = Array.from({ length: pageAmount }, (_, x) => x + 1)
 
   const paginationHandler = (e) => {
-    if (e.target.value === 'next' && currentPage < pageAmount) {
-      router.push(`${path}/${Number(currentPage) + 1}`)
+    if (e.target.value === 'next' && page < pageAmount) {
+      router.push(`${path}/${Number(page) + 1}`)
       const newActiveButton = {
         ...activeButton,
-        buttonNumber: Number(currentPage) + 1,
+        buttonNumber: Number(page) + 1,
       }
 
       setActiveButton(newActiveButton)
