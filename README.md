@@ -10,7 +10,8 @@ This is a [Next.js](https://nextjs.org/) furniture-shop website was built as gra
 * SASS
 * axios
 * styled-components
-* Redux
+* React Hook Form
+* Redux Toolkit, Redux Thunk/Persist
 * eslint(linter)
 * prettier(code formating)
 
